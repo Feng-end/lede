@@ -162,14 +162,6 @@ jobs:
           # 
           # ========================固件定制部分结束========================
           # 
-          
-          - name: 同步最新的源码  
-          run: |
-          git remote add openwrt https://github.com/coolsnowwolf/lede.git
-          git pull openwrt master
-          git remote -v
-          sed -i 's/^[ \t]*//g' ./.config
-          make defconfig
       - name: Make download
         run: |
           make download -j8
